@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteCond %{THE_REQUEST} /public/(\S*) [NC]
+RewriteRule ^ /%1? [R=302,L,NE]
+
+RewriteRule !^public/ public%{REQUEST_URI} [L,NC]
